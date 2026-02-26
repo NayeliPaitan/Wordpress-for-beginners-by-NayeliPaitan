@@ -1,4 +1,3 @@
-# wordpress-for-beginners-by-NayeliPaitan
 # 📚 Curso Profesional de WordPress – Desde Cero
 
 Material académico desarrollado y dictado por Nayeli P.  
