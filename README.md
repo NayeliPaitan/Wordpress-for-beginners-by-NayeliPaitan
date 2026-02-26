@@ -1,7 +1,7 @@
 # 📚 Curso Profesional de WordPress – Desde Cero
 
-Material académico desarrollado y dictado por Nayeli P.  
-Curso realizado en colaboración con una ONG y la Universidad de Ciencias y Humanidades (UCH).
+Material académico desarrollado y dictado por Nayeli Paitan  
+Curso realizado en colaboración con una ONG QAMYANAPANKI y la Universidad de Ciencias y Humanidades (UCH).
 
 ---
 
