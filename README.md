@@ -46,7 +46,7 @@ Capacitar a estudiantes sin conocimientos técnicos en la creación, gestión y 
 
 ## 📜 Licencia
 
-Este material fue creado por Nayeli P.  
+Este material fue creado por Nayeli Paitan  
 Uso educativo permitido. No redistribución comercial sin autorización.
 
 ---
