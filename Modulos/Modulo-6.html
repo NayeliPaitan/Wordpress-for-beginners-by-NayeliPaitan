@@ -1,1 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Módulo 6 | Curso WordPress</title>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+
+<body data-unit-id="6">
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="../index.html">
+        <div class="logo"></div>
+        <div>
+          <strong>Blake Dev</strong><br />
+          <span class="small">Nayeli Paitan · Curso WordPress</span>
+        </div>
+      </a>
+      <span class="pill">Estado: <span data-here-status>Pendiente</span></span>
+    </div>
+
+    <div class="pageHead">
+      <div>
+        <h1>Módulo 6: Contenidos con Canva</h1>
+        <p>Diseño, animación y exportación optimizada para web.</p>
+      </div>
+      <div class="kpis">
+        <a class="btn" href="../Manuales/Unidad%206.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
+        <button class="btn primary" id="doneBtn" type="button">Marcar como completado ✅</button>
+      </div>
+    </div>
+
+    <div class="progressBar" aria-label="Progreso" style="margin-top:12px;">
+      <div data-progress-bar></div>
+    </div>
+    <div class="small" data-progress-label style="margin-top:8px;">0% completado</div>
+
+    <div class="viewer">
+      <iframe src="../Manuales/Unidad%206.pdf" title="Unidad 6 PDF"></iframe>
+    </div>
+
+    <div id="quizMount"></div>
+
+    <div class="navFooter">
+      <a class="btn" href="./Modulo-5.html">← Anterior</a>
+      <a class="btn primary" href="../index.html">Volver al índice ✅</a>
+    </div>
+
+    <p class="footer">Tip: completa todo + quizzes (≥ 70%) para generar tu certificado 🎓</p>
+  </div>
+
+  <script src="../assets/app.js"></script>
+  <script>
+    const UNIT_ID = 6;
+
+    Course.refreshAllUI();
+    Course.renderQuiz(UNIT_ID, "#quizMount");
+
+    document.getElementById("doneBtn").addEventListener("click", () => {
+      Course.markUnitCompleted(UNIT_ID);
+      alert("Módulo marcado como completado ✅");
+    });
+  </script>
+</body>
+</html>
