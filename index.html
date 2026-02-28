@@ -3,60 +3,135 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Curso de WordPress - Nayeli Paitan</title>
+  <title>Curso Profesional de WordPress | Nayeli P.</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <header class="container">
-    <div class="container">
+  <div class="container">
     <div class="topbar">
       <a class="brand" href="./">
         <div class="logo"></div>
         <div>
           <strong>Curso WordPress</strong><br />
-          <span class="small">por Nayeli P.</span>
+          <span class="small">por Nayeli Paitan</span>
         </div>
       </a>
       <span class="pill">GitHub Pages · Curso Premium</span>
     </div>
-    <h1>Curso Profesional de WordPress</h1>
-    <p class="subtitle">Material creado por Nayeli P. · Publicado en GitHub Pages</p>
 
-    <nav class="nav">
-      <a href="Modulos/Modulo-1.html">Unidad 1</a>
-      <a href="Modulos/Modulo-2.html">Unidad 2</a>
-      <a href="Modulos/Modulo-3.html">Unidad 3</a>
-      <a href="Modulos/Modulo-4.html">Unidad 4</a>
-      <a href="Modulos/Modulo-5.html">Unidad 5</a>
-      <a href="Modulos/Modulo-6.html">Unidad 6</a>
-    </nav>
-  </header>
+    <section class="hero">
+      <h1>Aprende WordPress desde Cero<br/>y crea tu primera web profesional</h1>
+      <p>
+        Material educativo estructurado por unidades: instalación, contenidos, blog, menús/widgets,
+        plugins/usuarios y creación de contenido con Canva.
+      </p>
 
-  <main class="container card">
-    <h2>Contenido</h2>
-    <ul>
-      <li>Instalación y configuración</li>
-      <li>Gestión de páginas y contenidos</li>
-      <li>Blog y comentarios</li>
-      <li>Menús y widgets</li>
-      <li>Plugins y usuarios</li>
-      <li>Contenido con Canva</li>
-    </ul>
+      <div class="actions">
+        <a class="btn primary" href="unidades/unidad-1.html">Empezar (Unidad 1)</a>
+        <button class="btn" id="resetBtn" type="button">Reiniciar progreso</button>
+      </div>
 
-    <h2>Descargables (PDF)</h2>
-    <p>Si quieres mantener el PDF como material descargable:</p>
-    <ul>
-      <li><a href="Manuales/Unidad 1.pdf" target="_blank">Unidad 1 (PDF)</a></li>
-      <li><a href="Manuales/Unidad 2" target="_blank">Unidad 2 (PDF)</a></li>
-      <li><a href="Manuales/Unidad 3.pdf" target="_blank">Unidad 3 (PDF)</a></li>
-      <li><a href="Manuales/Unidad 4.pdf" target="_blank">Unidad 4 (PDF)</a></li>
-      <li><a href="Manuales/Unidad 5.pdf" target="_blank">Unidad 5 (PDF)</a></li>
-      <li><a href="Manuales/Unidad 6.pdf" target="_blank">Unidad 6 (PDF)</a></li>
-    </ul>
+      <div class="progressWrap">
+        <div>
+          <div class="small">Progreso del curso</div>
+          <div class="small" data-progress-label>0% completado</div>
+        </div>
+        <div class="progressBar" aria-label="Progreso">
+          <div data-progress-bar></div>
+        </div>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <small>© Nayeli P. — Uso educativo.</small>
-    </footer>
-  </main>
+    <div class="grid" id="unitGrid">
+      <!-- Cards renderizadas a mano (simple y rápido) -->
+      <div class="card">
+        <div class="title">
+          <h3>Unidad 1 · Instalación y configuración</h3>
+          <span class="badge" data-unit-badge="1">Pendiente</span>
+        </div>
+        <p>Descarga de WordPress, XAMPP y verificación de instalación.</p>
+        <div class="links">
+          <a class="btn primary" href="Modulos/Modulo-1.html">Abrir</a>
+          <a class="btn" href="Manuales/Unidad 1.pdf" target="_blank" rel="noreferrer">PDF</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">
+          <h3>Unidad 2 · Páginas y contenidos (1)</h3>
+          <span class="badge" data-unit-badge="2">Pendiente</span>
+        </div>
+        <p>CMS, páginas, entradas, comentarios, temas y plantillas.</p>
+        <div class="links">
+          <a class="btn primary" href="Modulos/Modulo-2.html">Abrir</a>
+          <a class="btn" href="Manuales/Unidad 2.pdf" target="_blank" rel="noreferrer">PDF</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">
+          <h3>Unidad 3 · Páginas y contenidos (2)</h3>
+          <span class="badge" data-unit-badge="3">Pendiente</span>
+        </div>
+        <p>Blog, edición con Elementor, gestión de comentarios y páginas.</p>
+        <div class="links">
+          <a class="btn primary" href="Modulos/Modulo-3.html">Abrir</a>
+          <a class="btn" href="Manuales/Unidad 3.pdf" target="_blank" rel="noreferrer">PDF</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">
+          <h3>Unidad 4 · Menús y Widgets</h3>
+          <span class="badge" data-unit-badge="4">Pendiente</span>
+        </div>
+        <p>Creación y configuración de menús, widgets y áreas del tema.</p>
+        <div class="links">
+          <a class="btn primary" href="Modulos/Modulo-4.html">Abrir</a>
+          <a class="btn" href="Manuales/Unidad 4.pdf" target="_blank" rel="noreferrer">PDF</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">
+          <h3>Unidad 5 · Plugins y Usuarios</h3>
+          <span class="badge" data-unit-badge="5">Pendiente</span>
+        </div>
+        <p>Instalación de plugins, criterios de elección y gestión de usuarios.</p>
+        <div class="links">
+          <a class="btn primary" href="Modulos/Modulo-5.html">Abrir</a>
+          <a class="btn" href="Manuales/Unidad 5.pdf" target="_blank" rel="noreferrer">PDF</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">
+          <h3>Unidad 6 · Contenidos con Canva</h3>
+          <span class="badge" data-unit-badge="6">Pendiente</span>
+        </div>
+        <p>Plantillas, importación, animaciones y exportación optimizada para web.</p>
+        <div class="links">
+          <a class="btn primary" href="Modulos/Modulo-6.html">Abrir</a>
+          <a class="btn" href="Manuales/Unidad-6.pdf" target="_blank" rel="noreferrer">PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer">
+      © Nayeli Paitan - BlakeDev · Uso educativo. Publicado como GitHub Pages.
+    </p>
+  </div>
+
+  <script src="assets/app.js"></script>
+  <script>
+    const state = Course.loadProgress();
+    Course.setBar(Course.percent(state));
+    Course.renderBadges(state);
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      Course.resetProgress();
+      alert("Progreso reiniciado ✅");
+    });
+  </script>
 </body>
 </html>
