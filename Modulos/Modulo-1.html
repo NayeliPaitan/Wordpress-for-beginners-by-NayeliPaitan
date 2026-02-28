@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unidad 1 | Curso WordPress</title>
+  <title>Módulo 1 | Curso WordPress</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
-<body>
+
+<body data-unit-id="1">
   <div class="container">
     <div class="topbar">
       <a class="brand" href="../index.html">
         <div class="logo"></div>
         <div>
-          <strong>Curso WordPress</strong><br />
-          <span class="small">por Nayeli P.</span>
+          <strong>Blake Dev</strong><br />
+          <span class="small">Nayeli Paitan · Curso WordPress</span>
         </div>
       </a>
       <span class="pill">Estado: <span data-here-status>Pendiente</span></span>
@@ -21,13 +22,12 @@
 
     <div class="pageHead">
       <div>
-        <h1>Unidad 1: Instalación y configuración</h1>
-        <p>Descarga de WordPress, XAMPP y verificación de instalación.</p>
+        <h1>Módulo 1: Instalación y configuración</h1>
+        <p>WordPress + XAMPP + verificación.</p>
       </div>
-
       <div class="kpis">
-        <a class="btn" href="../material/unidad-1.pdf" target="_blank" rel="noreferrer">Abrir PDF</a>
-        <button class="btn primary" id="doneBtn" type="button">Marcar como completado</button>
+        <a class="btn" href="../Manuales/Unidad%201.pdf" target="_blank" rel="noreferrer">Abrir PDF</a>
+        <button class="btn primary" id="doneBtn" type="button">Marcar módulo como completado ✅</button>
       </div>
     </div>
 
@@ -40,32 +40,29 @@
     </div>
 
     <div class="viewer">
-      <iframe src="../material/unidad-1.pdf" title="Unidad 1 PDF"></iframe>
+      <iframe src="../Manuales/Unidad%201.pdf" title="Unidad 1 PDF"></iframe>
     </div>
+
+    <div id="quizMount"></div>
 
     <div class="navFooter">
       <a class="btn" href="../index.html">← Índice</a>
-      <a class="btn primary" href="./unidad-2.html">Siguiente →</a>
+      <a class="btn primary" href="./Modulo-2.html">Siguiente →</a>
     </div>
 
-    <p class="footer">Tip: marca la unidad como completada para ver tu progreso.</p>
+    <p class="footer">Tip: aprueba el quiz para habilitar el certificado 🎓</p>
   </div>
 
   <script src="../assets/app.js"></script>
   <script>
     const UNIT_ID = 1;
-    const state = Course.loadProgress();
-    Course.setBar(Course.percent(state));
-    Course.renderBadges(state);
 
-    // Mostrar estado actual
-    if (state.completed.includes(UNIT_ID)) {
-      document.querySelector("[data-here-status]").textContent = "Completado ✅";
-    }
+    Course.refreshAllUI();
+    Course.renderQuiz(UNIT_ID, "#quizMount");
 
     document.getElementById("doneBtn").addEventListener("click", () => {
-      Course.markCompleted(UNIT_ID);
-      document.querySelector("[data-here-status]").textContent = "Completado ✅";
+      Course.markUnitCompleted(UNIT_ID);
+      alert("Módulo marcado como completado ✅");
     });
   </script>
 </body>
