@@ -1,29 +1,72 @@
-
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unidad 1 - Instalación</title>
+  <title>Unidad 1 | Curso WordPress</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
-  <header class="container">
-    <a href="../index.html">← Volver</a>
-    <h1>Unidad 1: Instalación y configuración</h1>
-    <p class="subtitle">WordPress + XAMPP + verificación</p>
-  </header>
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="../index.html">
+        <div class="logo"></div>
+        <div>
+          <strong>Curso WordPress</strong><br />
+          <span class="small">por Nayeli P.</span>
+        </div>
+      </a>
+      <span class="pill">Estado: <span data-here-status>Pendiente</span></span>
+    </div>
 
-  <main class="container">
-    <p>Descarga el PDF:</p>
-    <p><a href="../material/unidad-1.pdf" target="_blank">Abrir Unidad 1 (PDF)</a></p>
+    <div class="pageHead">
+      <div>
+        <h1>Unidad 1: Instalación y configuración</h1>
+        <p>Descarga de WordPress, XAMPP y verificación de instalación.</p>
+      </div>
 
-    <h2>Ver el PDF embebido (opcional)</h2>
-    <iframe
-      src="../material/unidad-1.pdf"
-      style="width:100%; height:80vh; border:1px solid #ddd; border-radius:12px;"
-      title="Unidad 1 PDF"
-    ></iframe>
-  </main>
+      <div class="kpis">
+        <a class="btn" href="../material/unidad-1.pdf" target="_blank" rel="noreferrer">Abrir PDF</a>
+        <button class="btn primary" id="doneBtn" type="button">Marcar como completado</button>
+      </div>
+    </div>
+
+    <div class="progressWrap">
+      <div>
+        <div class="small">Progreso del curso</div>
+        <div class="small" data-progress-label>0% completado</div>
+      </div>
+      <div class="progressBar"><div data-progress-bar></div></div>
+    </div>
+
+    <div class="viewer">
+      <iframe src="../material/unidad-1.pdf" title="Unidad 1 PDF"></iframe>
+    </div>
+
+    <div class="navFooter">
+      <a class="btn" href="../index.html">← Índice</a>
+      <a class="btn primary" href="./unidad-2.html">Siguiente →</a>
+    </div>
+
+    <p class="footer">Tip: marca la unidad como completada para ver tu progreso.</p>
+  </div>
+
+  <script src="../assets/app.js"></script>
+  <script>
+    const UNIT_ID = 1;
+    const state = Course.loadProgress();
+    Course.setBar(Course.percent(state));
+    Course.renderBadges(state);
+
+    // Mostrar estado actual
+    if (state.completed.includes(UNIT_ID)) {
+      document.querySelector("[data-here-status]").textContent = "Completado ✅";
+    }
+
+    document.getElementById("doneBtn").addEventListener("click", () => {
+      Course.markCompleted(UNIT_ID);
+      document.querySelector("[data-here-status]").textContent = "Completado ✅";
+    });
+  </script>
 </body>
 </html>
