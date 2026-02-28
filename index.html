@@ -3,13 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <title>Curso WordPress | Nayeli Paitan (Blake Dev)</title>
+
+  <!-- Fonts: Space Grotesk (titles) + Inter (text/buttons) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
   <div class="container">
+    <!-- Top bar -->
     <div class="topbar">
       <a class="brand" href="./">
         <div class="logo"></div>
@@ -18,121 +24,176 @@
           <span class="small">Nayeli Paitan · Blake Dev</span>
         </div>
       </a>
-      <span class="pill">GitHub Pages · Plataforma</span>
+
+      <div class="top-actions">
+        <span class="pill">GitHub Pages</span>
+      </div>
     </div>
-    <section class="hero">
-      <h1>Aprende WordPress desde Cero y crea tu primera web profesional</h1>
-      <p>
-        Aprende instalación, contenidos, blog, menús/widgets, plugins/usuarios y Canva.
-        Tu avance se guarda automáticamente.
-      </p>
 
-      <div class="actions">
-        <button class="btn primary" data-continue-btn type="button">Continuar</button>
-        <a class="btn primary" href="Modulos/Modulo-1.html">Empezar (Unidad 1)</a>
-        <button class="btn" id="resetBtn" type="button">Reiniciar progreso</button>
+    <!-- HERO / Dashboard -->
+    <section class="hero hero-grid">
+      <div class="hero-left">
+        <h1>Aprende WordPress desde Cero y crea tu primera web profesional</h1>
+        <p>
+          Instalación, contenidos, blog, menús/widgets, plugins/usuarios y Canva.
+          Tu avance se guarda automáticamente en este navegador.
+        </p>
 
-        <button class="btn ghost" data-certificate-btn type="button" disabled>
-          Generar certificado 🎓
-        </button>
-        <span class="small" data-certificate-hint></span>
+        <div class="hero-cta">
+          <button class="btn primary" data-continue-btn type="button">Continuar</button>
+
+          <button class="btn ghost" data-certificate-btn type="button" disabled>
+            Generar certificado 🎓
+          </button>
+        </div>
+
+        <div class="hint" data-certificate-hint></div>
       </div>
 
-      <div class="progressWrap">
-        <div>
-          <div class="small">Progreso del curso</div>
-          <div class="small" data-progress-label>0% completado</div>
-        </div>
-        <div class="progressBar" aria-label="Progreso">
-          <div data-progress-bar></div>
+      <div class="hero-right">
+        <div class="status-card">
+          <div class="status-title">Tu progreso</div>
+          <div class="status-row">
+            <div class="status-percent" data-progress-label>0% completado</div>
+            <span class="status-chip" id="unitsCount">0/6 unidades</span>
+          </div>
+
+          <div class="progressBar" aria-label="Progreso">
+            <div data-progress-bar></div>
+          </div>
+
+          <div class="status-meta">
+            <div class="small" id="quizAvg">Quizzes: —</div>
+            <button class="reset-link" id="resetBtn" type="button">Reiniciar progreso</button>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Module grid -->
+    <div class="section-head">
+      <h2>Contenido del curso</h2>
+      <p class="small">Completa unidades + aprueba quizzes (≥ 70%) para desbloquear el certificado.</p>
+    </div>
+
     <div class="grid">
-      <!-- U1 -->
+      <!-- M1 -->
       <div class="card">
         <div class="title">
-          <h3>Unidad 1 · Instalación y configuración</h3>
-          <span class="badge" data-unit-badge="1">Pendiente</span>
+          <h3>Módulo 1 · Instalación y configuración</h3>
+          <span class="badge warn" data-unit-badge="1">Pendiente</span>
         </div>
         <p>WordPress + XAMPP + verificación.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <span class="badge" data-quiz-badge="1">Quiz</span>
+
+        <div class="meta">
+          <span class="badge warn" data-quiz-badge="1">Quiz: sin intento</span>
+          <span class="meta-dot">•</span>
+          <span class="small">~20 min</span>
         </div>
+
         <div class="links">
-          <a class="btn primary" href="unidades/unidad-1.html">Abrir</a>
-          <a class="btn" href="material/unidad-1.pdf" target="_blank" rel="noreferrer">PDF</a>
+          <a class="btn primary" href="Modulos/Modulo-1.html">Abrir módulo</a>
+          <a class="link" href="Manuales/Unidad%201.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
         </div>
       </div>
 
-      <!-- U2 -->
+      <!-- M2 -->
       <div class="card">
         <div class="title">
-          <h3>Unidad 2 · Páginas y contenidos (1)</h3>
-          <span class="badge" data-unit-badge="2">Pendiente</span>
+          <h3>Módulo 2 · Páginas y contenidos (1)</h3>
+          <span class="badge warn" data-unit-badge="2">Pendiente</span>
         </div>
         <p>CMS, páginas, entradas, comentarios, temas/plantillas.</p>
-        <span class="badge" data-quiz-badge="2">Quiz</span>
+
+        <div class="meta">
+          <span class="badge warn" data-quiz-badge="2">Quiz: sin intento</span>
+          <span class="meta-dot">•</span>
+          <span class="small">~25 min</span>
+        </div>
+
         <div class="links">
-          <a class="btn primary" href="Modulos/Modulo-2.html">Abrir</a>
-          <a class="btn" href="Manuales/Unidad 2.pdf" target="_blank" rel="noreferrer">PDF</a>
+          <a class="btn primary" href="Modulos/Modulo-2.html">Abrir módulo</a>
+          <a class="link" href="Manuales/Unidad%202.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
         </div>
       </div>
 
-      <!-- U3 -->
+      <!-- M3 -->
       <div class="card">
         <div class="title">
-          <h3>Unidad 3 · Páginas y contenidos (2)</h3>
-          <span class="badge" data-unit-badge="3">Pendiente</span>
+          <h3>Módulo 3 · Páginas y contenidos (2)</h3>
+          <span class="badge warn" data-unit-badge="3">Pendiente</span>
         </div>
         <p>Blog, comentarios y gestión de páginas.</p>
-        <span class="badge" data-quiz-badge="3">Quiz</span>
+
+        <div class="meta">
+          <span class="badge warn" data-quiz-badge="3">Quiz: sin intento</span>
+          <span class="meta-dot">•</span>
+          <span class="small">~25 min</span>
+        </div>
+
         <div class="links">
-          <a class="btn primary" href="Modulos/Modulo-3.html">Abrir</a>
-          <a class="btn" href="Manuales/Unidad 3.pdf" target="_blank" rel="noreferrer">PDF</a>
+          <a class="btn primary" href="Modulos/Modulo-3.html">Abrir módulo</a>
+          <a class="link" href="Manuales/Unidad%203.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
         </div>
       </div>
 
-      <!-- U4 -->
+      <!-- M4 -->
       <div class="card">
         <div class="title">
-          <h3>Unidad 4 · Menús y Widgets</h3>
-          <span class="badge" data-unit-badge="4">Pendiente</span>
+          <h3>Módulo 4 · Menús y Widgets</h3>
+          <span class="badge warn" data-unit-badge="4">Pendiente</span>
         </div>
         <p>Menús, ubicaciones, widgets y áreas del tema.</p>
-        <span class="badge" data-quiz-badge="4">Quiz</span>
+
+        <div class="meta">
+          <span class="badge warn" data-quiz-badge="4">Quiz: sin intento</span>
+          <span class="meta-dot">•</span>
+          <span class="small">~20 min</span>
+        </div>
+
         <div class="links">
-          <a class="btn primary" href="Modulos/Modulo-4.html">Abrir</a>
-          <a class="btn" href="Manuales/Unidad 4.pdf" target="_blank" rel="noreferrer">PDF</a>
+          <a class="btn primary" href="Modulos/Modulo-4.html">Abrir módulo</a>
+          <a class="link" href="Manuales/Unidad%204.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
         </div>
       </div>
 
-      <!-- U5 -->
+      <!-- M5 -->
       <div class="card">
         <div class="title">
-          <h3>Unidad 5 · Plugins y Usuarios</h3>
-          <span class="badge" data-unit-badge="5">Pendiente</span>
+          <h3>Módulo 5 · Plugins y Usuarios</h3>
+          <span class="badge warn" data-unit-badge="5">Pendiente</span>
         </div>
         <p>Plugins: instalación/criterios. Usuarios y roles.</p>
-        <span class="badge" data-quiz-badge="5">Quiz</span>
+
+        <div class="meta">
+          <span class="badge warn" data-quiz-badge="5">Quiz: sin intento</span>
+          <span class="meta-dot">•</span>
+          <span class="small">~25 min</span>
+        </div>
+
         <div class="links">
-          <a class="btn primary" href="Modulos/Modulo-5.html">Abrir</a>
-          <a class="btn" href="Manuales/Unidad 5.pdf" target="_blank" rel="noreferrer">PDF</a>
+          <a class="btn primary" href="Modulos/Modulo-5.html">Abrir módulo</a>
+          <a class="link" href="Manuales/Unidad%205.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
         </div>
       </div>
 
-      <!-- U6 -->
+      <!-- M6 -->
       <div class="card">
         <div class="title">
-          <h3>Unidad 6 · Contenidos con Canva</h3>
-          <span class="badge" data-unit-badge="6">Pendiente</span>
+          <h3>Módulo 6 · Contenidos con Canva</h3>
+          <span class="badge warn" data-unit-badge="6">Pendiente</span>
         </div>
-        <p>Diseño, animación y exportación para web.</p>
-        <span class="badge" data-quiz-badge="6">Quiz</span>
+        <p>Diseño, animación y exportación optimizada para web.</p>
+
+        <div class="meta">
+          <span class="badge warn" data-quiz-badge="6">Quiz: sin intento</span>
+          <span class="meta-dot">•</span>
+          <span class="small">~20 min</span>
+        </div>
+
         <div class="links">
-          <a class="btn primary" href="Modulos/Modulo-6.html">Abrir</a>
-          <a class="btn" href="Manuales/Unidad 6.pdf" target="_blank" rel="noreferrer">PDF</a>
+          <a class="btn primary" href="Modulos/Modulo-6.html">Abrir módulo</a>
+          <a class="link" href="Manuales/Unidad%206.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
         </div>
       </div>
     </div>
@@ -145,11 +206,8 @@
     Course.refreshAllUI();
 
     document.getElementById("resetBtn").addEventListener("click", () => {
-      if(confirm("¿Reiniciar progreso + quizzes?")) Course.resetAll();
+      if (confirm("¿Reiniciar progreso + quizzes en este navegador?")) Course.resetAll();
     });
   </script>
 </body>
 </html>
-
- 
-   
