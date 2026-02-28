@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
+  <script src="assets/app.js"></script>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
@@ -200,14 +200,48 @@
 
     <p class="footer">© Nayeli Paitan (Blake Dev) · Curso WordPress en GitHub Pages</p>
   </div>
-
-  <script src="assets/app.js"></script>
   <script>
-    Course.refreshAllUI();
+  // Ejecutar cuando el DOM ya esté listo (más seguro en GitHub Pages + caché)
+  window.addEventListener("DOMContentLoaded", () => {
+    const continueBtn = document.querySelector("[data-continue-btn]");
+    const resetBtn = document.getElementById("resetBtn");
 
-    document.getElementById("resetBtn").addEventListener("click", () => {
-      if (confirm("¿Reiniciar progreso + quizzes en este navegador?")) Course.resetAll();
-    });
-  </script>
+    // Fallback: si por algún motivo el JS no carga, igual navega al módulo 1
+    if (continueBtn) {
+      continueBtn.addEventListener("click", () => {
+        // Si Course existe, usa la lógica real (primera unidad pendiente)
+        if (window.Course && typeof window.Course.firstIncompleteUnit === "function") {
+          const state = window.Course.loadState ? window.Course.loadState() : null;
+          const next = state ? window.Course.firstIncompleteUnit(state) : null;
+          window.location.href = next?.path || "Modulos/Modulo-1.html";
+          return;
+        }
+
+        // Si Course no existe, fallback directo
+        window.location.href = "Modulos/Modulo-1.html";
+      });
+    }
+
+    // UI normal si Course está disponible
+    if (window.Course && typeof window.Course.refreshAllUI === "function") {
+      window.Course.refreshAllUI();
+    }
+
+    // Reset seguro
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        if (!confirm("¿Reiniciar progreso + quizzes en este navegador?")) return;
+
+        if (window.Course && typeof window.Course.resetAll === "function") {
+          window.Course.resetAll();
+        } else {
+          // fallback: limpia storage si no está Course
+          localStorage.clear();
+          window.location.reload();
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
