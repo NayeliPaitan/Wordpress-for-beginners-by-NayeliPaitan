@@ -4,6 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Módulo 1 | Curso WordPress</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 
@@ -26,18 +32,15 @@
         <p>WordPress + XAMPP + verificación.</p>
       </div>
       <div class="kpis">
-        <a class="btn" href="../Manuales/Unidad%201.pdf" target="_blank" rel="noreferrer">Abrir PDF</a>
-        <button class="btn primary" id="doneBtn" type="button">Marcar módulo como completado ✅</button>
+        <a class="btn" href="../Manuales/Unidad%201.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
+        <button class="btn primary" id="doneBtn" type="button">Marcar como completado ✅</button>
       </div>
     </div>
 
-    <div class="progressWrap">
-      <div>
-        <div class="small">Progreso del curso</div>
-        <div class="small" data-progress-label>0% completado</div>
-      </div>
-      <div class="progressBar"><div data-progress-bar></div></div>
+    <div class="progressBar" aria-label="Progreso" style="margin-top:12px;">
+      <div data-progress-bar></div>
     </div>
+    <div class="small" data-progress-label style="margin-top:8px;">0% completado</div>
 
     <div class="viewer">
       <iframe src="../Manuales/Unidad%201.pdf" title="Unidad 1 PDF"></iframe>
@@ -46,11 +49,11 @@
     <div id="quizMount"></div>
 
     <div class="navFooter">
-      <a class="btn" href="../index.html">← Índice</a>
+      <a class="btn" href="../index.html">← Volver al índice</a>
       <a class="btn primary" href="./Modulo-2.html">Siguiente →</a>
     </div>
 
-    <p class="footer">Tip: aprueba el quiz para habilitar el certificado 🎓</p>
+    <p class="footer">Tip: aprueba el quiz (≥ 70%) para desbloquear certificado 🎓</p>
   </div>
 
   <script src="../assets/app.js"></script>
