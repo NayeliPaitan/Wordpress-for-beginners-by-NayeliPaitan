@@ -342,6 +342,16 @@ a{color:inherit}
   flex-wrap:wrap;
 }
 
+/* ===== Ajuste botones "Abrir módulo" ===== */
+.card .btn.primary{
+  padding: 8px 16px;          /* menos alto */
+  border-radius: 999px;       /* totalmente redondo */
+  font-size: 14px;            /* un poco más fino */
+  font-weight: 600;
+  min-height: auto;
+  line-height: 1.2;
+}
+
 /* Responsive */
 @media (max-width: 900px){
   .hero-grid{grid-template-columns:1fr}
