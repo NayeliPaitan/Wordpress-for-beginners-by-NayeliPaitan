@@ -1,15 +1,20 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="shortcut icon" src="img/icon.png" />
+  
   <title>Curso WordPress | Nayeli Paitan (Blake Dev)</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/icon.ico">
 
   <!-- Fonts: Space Grotesk (titles) + Inter (text/buttons) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <script src="assets/app.js"></script>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
@@ -19,7 +24,9 @@
     <!-- Top bar -->
     <div class="topbar">
       <a class="brand" href="./">
-        <div class="logo"></div>
+        <div class="logo">
+          <img src="img/monograma.png" alt="Logo Nayeli Paitan">
+        </div>
         <div>
           <strong>Curso WordPress</strong><br />
           <span class="small">Nayeli Paitan · Blake Dev</span>
@@ -27,12 +34,13 @@
       </a>
 
       <div class="top-actions">
-        <span class="pill">GitHub Pages</span>
+        <a class="pill" href="#modulos">📚 Ver módulos</a>
       </div>
     </div>
 
     <!-- HERO / Dashboard -->
     <section class="hero hero-grid">
+      <img class="hero-banner" src="img/banner-wordpress.png" alt="Curso WordPress"><br>
       <div class="hero-left">
         <h1>Aprende WordPress desde Cero y crea tu primera web profesional</h1>
         <p>
@@ -202,47 +210,48 @@
     <p class="footer">© Nayeli Paitan (Blake Dev) · Curso WordPress en GitHub Pages</p>
   </div>
   <script>
-  // Ejecutar cuando el DOM ya esté listo (más seguro en GitHub Pages + caché)
-  window.addEventListener("DOMContentLoaded", () => {
-    const continueBtn = document.querySelector("[data-continue-btn]");
-    const resetBtn = document.getElementById("resetBtn");
+    // Ejecutar cuando el DOM ya esté listo (más seguro en GitHub Pages + caché)
+    window.addEventListener("DOMContentLoaded", () => {
+      const continueBtn = document.querySelector("[data-continue-btn]");
+      const resetBtn = document.getElementById("resetBtn");
 
-    // Fallback: si por algún motivo el JS no carga, igual navega al módulo 1
-    if (continueBtn) {
-      continueBtn.addEventListener("click", () => {
-        // Si Course existe, usa la lógica real (primera unidad pendiente)
-        if (window.Course && typeof window.Course.firstIncompleteUnit === "function") {
-          const state = window.Course.loadState ? window.Course.loadState() : null;
-          const next = state ? window.Course.firstIncompleteUnit(state) : null;
-          window.location.href = next?.path || "Modulos/Modulo-1.html";
-          return;
-        }
+      // Fallback: si por algún motivo el JS no carga, igual navega al módulo 1
+      if (continueBtn) {
+        continueBtn.addEventListener("click", () => {
+          // Si Course existe, usa la lógica real (primera unidad pendiente)
+          if (window.Course && typeof window.Course.firstIncompleteUnit === "function") {
+            const state = window.Course.loadState ? window.Course.loadState() : null;
+            const next = state ? window.Course.firstIncompleteUnit(state) : null;
+            window.location.href = next?.path || "Modulos/Modulo-1.html";
+            return;
+          }
 
-        // Si Course no existe, fallback directo
-        window.location.href = "Modulos/Modulo-1.html";
-      });
-    }
+          // Si Course no existe, fallback directo
+          window.location.href = "Modulos/Modulo-1.html";
+        });
+      }
 
-    // UI normal si Course está disponible
-    if (window.Course && typeof window.Course.refreshAllUI === "function") {
-      window.Course.refreshAllUI();
-    }
+      // UI normal si Course está disponible
+      if (window.Course && typeof window.Course.refreshAllUI === "function") {
+        window.Course.refreshAllUI();
+      }
 
-    // Reset seguro
-    if (resetBtn) {
-      resetBtn.addEventListener("click", () => {
-        if (!confirm("¿Reiniciar progreso + quizzes en este navegador?")) return;
+      // Reset seguro
+      if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+          if (!confirm("¿Reiniciar progreso + quizzes en este navegador?")) return;
 
-        if (window.Course && typeof window.Course.resetAll === "function") {
-          window.Course.resetAll();
-        } else {
-          // fallback: limpia storage si no está Course
-          localStorage.clear();
-          window.location.reload();
-        }
-      });
-    }
-  });
-</script>
+          if (window.Course && typeof window.Course.resetAll === "function") {
+            window.Course.resetAll();
+          } else {
+            // fallback: limpia storage si no está Course
+            localStorage.clear();
+            window.location.reload();
+          }
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
